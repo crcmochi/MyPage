@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>筑波大学 情報科学類 編入試験 受験記 — sh34634.com</title>
+  <link rel="icon" href="/assets/icon.png">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #ffffff;
+      --bg-sub: #f7f7f5;
+      --text: #1a1a1a;
+      --text-muted: #888880;
+      --text-faint: #bbbbb5;
+      --border: rgba(0,0,0,0.08);
+      --border-mid: rgba(0,0,0,0.14);
+      --tag-bg: #f0f0ec;
+      --tag-text: #555550;
+      --radius: 8px;
+      --max-w: 720px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #111110;
+        --bg-sub: #1c1c1a;
+        --text: #e8e8e3;
+        --text-muted: #888880;
+        --text-faint: #444440;
+        --border: rgba(255,255,255,0.07);
+        --border-mid: rgba(255,255,255,0.12);
+        --tag-bg: #252522;
+        --tag-text: #9a9a92;
+      }
+    }
+
+    html { font-size: 16px; -webkit-font-smoothing: antialiased; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 28px 24px;
+      border-bottom: 0.5px solid var(--border);
+    }
+
+    .logo {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text);
+      text-decoration: none;
+      letter-spacing: 0.03em;
+    }
+
+    .nav-back {
+      font-size: 13px;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .nav-back:hover { color: var(--text); }
+
+    main {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .article-header {
+      padding: 56px 0 40px;
+      border-bottom: 0.5px solid var(--border);
+    }
+
+    .article-eyebrow {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-faint);
+      margin-bottom: 14px;
+    }
+
+    .article-header h1 {
+      font-size: 28px;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      line-height: 1.3;
+      margin-bottom: 16px;
+    }
+
+    .article-meta {
+      display: flex;
+      gap: 20px;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .article-body {
+      padding: 48px 0 64px;
+    }
+
+    .article-body h2 {
+      font-size: 17px;
+      font-weight: 500;
+      color: var(--text);
+      margin: 40px 0 14px;
+    }
+
+    .article-body h2:first-child { margin-top: 0; }
+
+    .article-body p {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.85;
+      margin-bottom: 14px;
+    }
+
+    .article-body p:last-child { margin-bottom: 0; }
+
+    .article-body ul {
+      list-style: none;
+      margin-bottom: 14px;
+    }
+
+    .article-body ul li {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.85;
+      padding-left: 16px;
+      position: relative;
+    }
+
+    .article-body ul li::before {
+      content: "–";
+      position: absolute;
+      left: 0;
+      color: var(--text-faint);
+    }
+
+    /* INFO TABLE */
+    .info-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 14px;
+      font-size: 14px;
+    }
+
+    .info-table th,
+    .info-table td {
+      text-align: left;
+      padding: 10px 14px;
+      border-bottom: 0.5px solid var(--border);
+      line-height: 1.6;
+    }
+
+    .info-table th {
+      font-weight: 500;
+      color: var(--text-faint);
+      font-size: 12px;
+      width: 140px;
+      white-space: nowrap;
+    }
+
+    .info-table td { color: var(--text-muted); }
+
+    .info-table tr:last-child th,
+    .info-table tr:last-child td { border-bottom: none; }
+
+    /* SCORE TABLE */
+    .score-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 14px;
+      font-size: 14px;
+    }
+
+    .score-table th {
+      text-align: left;
+      padding: 8px 14px;
+      border-bottom: 0.5px solid var(--border);
+      font-weight: 500;
+      font-size: 12px;
+      color: var(--text-faint);
+    }
+
+    .score-table td {
+      padding: 10px 14px;
+      border-bottom: 0.5px solid var(--border);
+      color: var(--text-muted);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .score-table tr:last-child td { border-bottom: none; }
+
+    .score-badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 500;
+      padding: 2px 8px;
+      border-radius: 4px;
+      background: var(--tag-bg);
+      color: var(--tag-text);
+      margin-left: 8px;
+    }
+
+    .card {
+      background: var(--bg-sub);
+      border: 0.5px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      margin-bottom: 14px;
+    }
+
+    .divider {
+      border: none;
+      border-top: 0.5px solid var(--border);
+      margin: 40px 0;
+    }
+
+    footer {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 0.5px solid var(--border);
+    }
+
+    footer span { font-size: 12px; color: var(--text-faint); }
+
+    footer a {
+      font-size: 12px;
+      color: var(--text-faint);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    footer a:hover { color: var(--text-muted); }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="logo">sh34634.com</a>
+    <a href="/#writing" class="nav-back">← writing</a>
+  </nav>
+
+  <main>
+    <header class="article-header">
+      <p class="article-eyebrow">writing</p>
+      <h1>筑波大学 情報学群 情報科学類<br>編入試験 受験記</h1>
+      <div class="article-meta">
+        <span>2025-07-24</span>
+        <span>柴田 悠伽</span>
+      </div>
+    </header>
+
+    <div class="article-body">
+
+      <h2>基本情報</h2>
+      <div class="card">
+        <table class="info-table">
+          <tr><th>受験校</th><td>筑波大学 情報学群 情報科学類</td></tr>
+          <tr><th>受験日</th><td>2025年7月12日</td></tr>
+          <tr><th>受験種別</th><td>一般（学力）</td></tr>
+          <tr><th>試験内容</th><td>筆記（数学・プログラミング）、TOEIC</td></tr>
+          <tr><th>合格発表日</th><td>2025年7月24日</td></tr>
+          <tr><th>結果</th><td>合格</td></tr>
+          <tr><th>併願校</th><td>佐賀大学、広島大学</td></tr>
+          <tr><th>本校での席次</th><td>3年：10位、4年：20位</td></tr>
+        </table>
+      </div>
+
+      <h2>得点開示</h2>
+      <div class="card">
+        <table class="score-table">
+          <tr><th>科目</th><th>得点</th></tr>
+          <tr><td>英語（TOEIC換算）</td><td>94点</td></tr>
+          <tr><td>専門科目</td><td>169点</td></tr>
+          <tr><td>合計</td><td><strong style="color:var(--text)">263点</strong></td></tr>
+        </table>
+      </div>
+
+      <hr class="divider">
+
+      <h2>TOEIC</h2>
+      <p>
+        805点で提出しました。筑波大学の換算では満点が860点となっており、提出スコアが860点未満の場合はそのままの換算にはならないため、なるべく早めに高スコアを取っておくことをおすすめします。
+      </p>
+      <p>
+        個人的には、編入試験の勉強が本格化する前に片付けておくのが理想です。英語に時間を取られると数学やプログラミングの対策期間が削られます。
+      </p>
+
+      <h2>数学</h2>
+      <p>使用した参考書は以下のとおりです。</p>
+      <ul>
+        <li>徹底研究 ― 例題1周、類題3周、章末3周</li>
+        <li>徹底演習 ― 1周</li>
+        <li>過去問特訓 ― 1周</li>
+        <li>大学編入のための問題集 ― 途中まで</li>
+      </ul>
+      <p>
+        まずは徹底研究をやりながら教科書をパラパラ読んで、いろんな定理や公式を理解しておくのがおすすめです。
+        過去問は20年分くらいやりました。難易度感が掴めるので、一通り基礎固めが終わったらトライしてみると良いと思います。
+      </p>
+      <p>
+        本番の自己採点は、微分・積分で7割、線形代数で10割、といった感じでした。
+      </p>
+
+      <h2>プログラミング</h2>
+      <p>参考書を読んだり、競プロの過去問を解いたりしました。特におすすめの2冊を紹介します。</p>
+      <ul>
+        <li>定本 Cプログラマのためのアルゴリズムとデータ構造 ― 計算量の理解におすすめ</li>
+        <li>競技プログラミングの鉄則 〜アルゴリズム力と思考力を高める77の技術〜 ― 動的計画法やグラフアルゴリズムの理解におすすめ</li>
+      </ul>
+      <p>
+        過去問は10年分くらいで充分だと思います。古い年のプログラミング問題は今と難易度が全く違うので、あまりやりすぎなくてよかったです。
+        過去問の答え合わせはChatGPTの有料プランで使える良いモデルに解かせていました。かなり精度が高くておすすめです。
+      </p>
+      <p>
+        本番は、動的計画法を用いた最短経路の計算で6割、ハッシュアルゴリズムで10割という感じでした。
+      </p>
+
+      <hr class="divider">
+
+      <h2>後輩へ</h2>
+      <p>
+        編入試験は情報が少なく、何から手をつければいいか迷うことも多いと思います。この記事が少しでも参考になれば嬉しいです。頑張ってください。
+      </p>
+
+    </div>
+  </main>
+
+  <footer>
+    <span>sh34634.com</span>
+    <a href="https://github.com/crcmochi" target="_blank" rel="noopener">GitHub</a>
+  </footer>
+
+</body>
+</html>
