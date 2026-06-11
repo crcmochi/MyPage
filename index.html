@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>sh34634.com — My Works</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #ffffff;
+      --bg-sub: #f7f7f5;
+      --text: #1a1a1a;
+      --text-muted: #888880;
+      --text-faint: #bbbbb5;
+      --border: rgba(0,0,0,0.08);
+      --border-mid: rgba(0,0,0,0.14);
+      --tag-bg: #f0f0ec;
+      --tag-text: #555550;
+      --radius: 8px;
+      --max-w: 720px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #111110;
+        --bg-sub: #1c1c1a;
+        --text: #e8e8e3;
+        --text-muted: #888880;
+        --text-faint: #444440;
+        --border: rgba(255,255,255,0.07);
+        --border-mid: rgba(255,255,255,0.12);
+        --tag-bg: #252522;
+        --tag-text: #9a9a92;
+      }
+    }
+
+    html { font-size: 16px; -webkit-font-smoothing: antialiased; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    /* NAV */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 28px 24px;
+      border-bottom: 0.5px solid var(--border);
+    }
+
+    .logo {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text);
+      text-decoration: none;
+      letter-spacing: 0.03em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 13px;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    /* MAIN */
+    main {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* HERO */
+    .hero {
+      padding: 64px 0 48px;
+      border-bottom: 0.5px solid var(--border);
+    }
+
+    .hero h1 {
+      font-size: 36px;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: 14px;
+    }
+
+    .hero p {
+      font-size: 15px;
+      color: var(--text-muted);
+      max-width: 460px;
+      line-height: 1.75;
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 40px 0;
+      border-bottom: 0.5px solid var(--border);
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-faint);
+    }
+
+    /* WORKS GRID */
+    .works-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    @media (max-width: 520px) {
+      .works-grid { grid-template-columns: 1fr; }
+    }
+
+    .work-card {
+      background: var(--bg-sub);
+      border: 0.5px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      text-decoration: none;
+      display: block;
+      transition: border-color 0.15s;
+    }
+
+    .work-card:hover { border-color: var(--border-mid); }
+
+    .work-tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--tag-text);
+      background: var(--tag-bg);
+      border-radius: 4px;
+      padding: 2px 8px;
+      margin-bottom: 10px;
+      letter-spacing: 0.03em;
+    }
+
+    .work-card h3 {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+
+    .work-card p {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* WRITING LIST */
+    .writing-list {
+      list-style: none;
+    }
+
+    .writing-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 13px 0;
+      border-bottom: 0.5px solid var(--border);
+    }
+
+    .writing-item:last-child { border-bottom: none; }
+
+    .writing-item a {
+      font-size: 14px;
+      color: var(--text);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .writing-item a:hover { color: var(--text-muted); }
+
+    .writing-date {
+      font-size: 12px;
+      color: var(--text-faint);
+      white-space: nowrap;
+      margin-left: 16px;
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* FOOTER */
+    footer {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    footer span {
+      font-size: 12px;
+      color: var(--text-faint);
+    }
+
+    footer a {
+      font-size: 12px;
+      color: var(--text-faint);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    footer a:hover { color: var(--text-muted); }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="logo">sh34634.com</a>
+    <ul class="nav-links">
+      <li><a href="#works">works</a></li>
+      <li><a href="#writing">writing</a></li>
+      <li><a href="#about">about</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <div class="hero">
+      <h1>My Works</h1>
+      <p>プログラミング作品と文章をまとめています。</p>
+    </div>
+
+    <!-- WORKS -->
+    <section id="works">
+      <div class="section-header">
+        <span class="section-label">works</span>
+      </div>
+      <div class="works-grid">
+
+        <a href="#" class="work-card">
+          <span class="work-tag">Python</span>
+          <h3>プロジェクト名</h3>
+          <p>作品の短い説明文がここに入ります。</p>
+        </a>
+
+        <a href="#" class="work-card">
+          <span class="work-tag">JavaScript</span>
+          <h3>プロジェクト名</h3>
+          <p>作品の短い説明文がここに入ります。</p>
+        </a>
+
+        <a href="#" class="work-card">
+          <span class="work-tag">CLI</span>
+          <h3>プロジェクト名</h3>
+          <p>作品の短い説明文がここに入ります。</p>
+        </a>
+
+        <a href="#" class="work-card">
+          <span class="work-tag">Web</span>
+          <h3>プロジェクト名</h3>
+          <p>作品の短い説明文がここに入ります。</p>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- WRITING -->
+    <section id="writing">
+      <div class="section-header">
+        <span class="section-label">writing</span>
+      </div>
+      <ul class="writing-list">
+
+        <li class="writing-item">
+          <a href="#">記事のタイトルがここに入ります</a>
+          <span class="writing-date">2025-01</span>
+        </li>
+
+        <li class="writing-item">
+          <a href="#">記事のタイトルがここに入ります</a>
+          <span class="writing-date">2024-11</span>
+        </li>
+
+        <li class="writing-item">
+          <a href="#">記事のタイトルがここに入ります</a>
+          <span class="writing-date">2024-09</span>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="section-header">
+        <span class="section-label">about</span>
+      </div>
+      <p style="font-size:14px; color:var(--text-muted); max-width:480px; line-height:1.8;">
+        自己紹介文がここに入ります。どんなことに興味があるか、何を作っているかなどを書いてみてください。
+      </p>
+    </section>
+
+  </main>
+
+  <footer>
+    <span>sh34634.com</span>
+    <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+  </footer>
+
+</body>
+</html>
