@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>COJT SWコースの振り返り — sh34634.com</title>
+  <link rel="icon" href="/assets/icon.png">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #ffffff;
+      --bg-sub: #f7f7f5;
+      --text: #1a1a1a;
+      --text-muted: #888880;
+      --text-faint: #bbbbb5;
+      --border: rgba(0,0,0,0.08);
+      --border-mid: rgba(0,0,0,0.14);
+      --tag-bg: #f0f0ec;
+      --tag-text: #555550;
+      --radius: 8px;
+      --max-w: 720px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #111110;
+        --bg-sub: #1c1c1a;
+        --text: #e8e8e3;
+        --text-muted: #888880;
+        --text-faint: #444440;
+        --border: rgba(255,255,255,0.07);
+        --border-mid: rgba(255,255,255,0.12);
+        --tag-bg: #252522;
+        --tag-text: #9a9a92;
+      }
+    }
+
+    html { font-size: 16px; -webkit-font-smoothing: antialiased; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 28px 24px;
+      border-bottom: 0.5px solid var(--border);
+    }
+
+    .logo {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text);
+      text-decoration: none;
+      letter-spacing: 0.03em;
+    }
+
+    .nav-back {
+      font-size: 13px;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .nav-back:hover { color: var(--text); }
+
+    main {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .article-header {
+      padding: 56px 0 40px;
+      border-bottom: 0.5px solid var(--border);
+    }
+
+    .article-eyebrow {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-faint);
+      margin-bottom: 14px;
+    }
+
+    .article-header h1 {
+      font-size: 28px;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      line-height: 1.3;
+      margin-bottom: 16px;
+    }
+
+    .article-meta {
+      display: flex;
+      gap: 20px;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .article-body {
+      padding: 48px 0 64px;
+    }
+
+    .article-body h2 {
+      font-size: 17px;
+      font-weight: 500;
+      color: var(--text);
+      margin: 40px 0 14px;
+    }
+
+    .article-body h2:first-child { margin-top: 0; }
+
+    .article-body p {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.85;
+      margin-bottom: 14px;
+    }
+
+    .article-body p:last-child { margin-bottom: 0; }
+
+    .article-body ul {
+      list-style: none;
+      margin-bottom: 14px;
+    }
+
+    .article-body ul li {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.85;
+      padding-left: 16px;
+      position: relative;
+    }
+
+    .article-body ul li::before {
+      content: "–";
+      position: absolute;
+      left: 0;
+      color: var(--text-faint);
+    }
+
+    /* INFO TABLE */
+    .info-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 14px;
+      font-size: 14px;
+    }
+
+    .info-table th,
+    .info-table td {
+      text-align: left;
+      padding: 10px 14px;
+      border-bottom: 0.5px solid var(--border);
+      line-height: 1.6;
+    }
+
+    .info-table th {
+      font-weight: 500;
+      color: var(--text-faint);
+      font-size: 12px;
+      width: 140px;
+      white-space: nowrap;
+    }
+
+    .info-table td { color: var(--text-muted); }
+
+    .info-table tr:last-child th,
+    .info-table tr:last-child td { border-bottom: none; }
+
+    /* SCORE TABLE */
+    .score-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 14px;
+      font-size: 14px;
+    }
+
+    .score-table th {
+      text-align: left;
+      padding: 8px 14px;
+      border-bottom: 0.5px solid var(--border);
+      font-weight: 500;
+      font-size: 12px;
+      color: var(--text-faint);
+    }
+
+    .score-table td {
+      padding: 10px 14px;
+      border-bottom: 0.5px solid var(--border);
+      color: var(--text-muted);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .score-table tr:last-child td { border-bottom: none; }
+
+    .score-badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 500;
+      padding: 2px 8px;
+      border-radius: 4px;
+      background: var(--tag-bg);
+      color: var(--tag-text);
+      margin-left: 8px;
+    }
+
+    .card {
+      background: var(--bg-sub);
+      border: 0.5px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      margin-bottom: 14px;
+    }
+
+    .divider {
+      border: none;
+      border-top: 0.5px solid var(--border);
+      margin: 40px 0;
+    }
+
+    footer {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 0.5px solid var(--border);
+    }
+
+    footer span { font-size: 12px; color: var(--text-faint); }
+
+    footer a {
+      font-size: 12px;
+      color: var(--text-faint);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    footer a:hover { color: var(--text-muted); }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="logo">sh34634.com</a>
+    <a href="/#writing" class="nav-back">← writing</a>
+  </nav>
+
+  <main>
+    <header class="article-header">
+      <p class="article-eyebrow">writing</p>
+      <h1>COJT SWコース 振り返り</h1>
+      <div class="article-meta">
+        <span>2027-??-??</span>
+        <span>@sh34634</span>
+      </div>
+    </header>
+
+    <div class="article-body">
+
+      <h2>COJTを選ぼうと思ったきっかけ</h2>
+      <p>
+        3年次編入をしてすぐ、主専攻実験の選択が始まりました。オリエンテーションの後半でCOJTに関する説明があり、興味を持ったのはその時でした。
+        COJTの存在自体は認識しており、チームでソフト開発とかおもろそうだな～と思っていました。<br>
+        「せっかくならチャレンジしてみようかな」の精神で、勢いで応募。面接を経て無事にSWコースに配属されることになりました。<br>
+      </p>
+
+      <h2>COJT入ってみて...</h2>
+      <big>みんなレベルが高い</big>
+      <p>
+        本当にレベルが高いです。様々な言語でソフト開発をしてきた猛者たちや、類い稀なアイデア力と行動力を兼ね備えた猛者たちが勢ぞろい。
+        また、AIの使い方の差も物凄く感じました。自分はAIを全く使いこなせてなかったんだな、と入ってすぐに再認識させられました。
+      </p>
+
+      <h2>チーム開発で感じた"壁"</h2>
+      <p>
+        しかし、それが逆手に出たこともありました。<br>
+        4人でチーム開発を行うことになったのですが、正直ソフトを個人で作るならAIを使ってすぐに完成してしまいます。
+        周りのみんなはVibe Codingをバリバリしてきた人ばかりで、そうした思想と私の思想はすぐぶつかることになりました。
+        そのため、AIの使い方についてチームで共通認識を持っておく必要がありました。<br>
+        e.g.) 人がやるタスクをAIに考えさせない、Projectを乗っ取らせない etc...<br>
+        最初のうちにそれを解決しておくことで、チーム開発を充実したものにすることができると感じました(人間はAIの小道具ではありませんからね)。
+        AIが普及した現代ならではの、チーム開発の悩みの種だと思います。
+      </p>
+
+    </div>
+  </main>
+
+  <footer>
+    <span>sh34634.com</span>
+    <a href="https://github.com/crcmochi" target="_blank" rel="noopener">GitHub</a>
+  </footer>
+
+</body>
+</html>
